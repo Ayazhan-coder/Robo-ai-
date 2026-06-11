@@ -4159,22 +4159,24 @@ function openLesson(lessonId) {
     </div>
     
     <!-- VIDEO -->
-    <div class="section-block">
-      <div class="section-title">🎥 Видеосабақ</div>
-      <div class="video-wrap" style="cursor:default;background:#000">
-        <iframe 
-          src="${getLessonVideoSrc(lessonId)}" 
-          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;border:none;" 
-          allow="autoplay; encrypted-media" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <button class="btn btn-primary btn-sm" style="margin-top:12px;width:100%;" onclick="markLessonVideoDone('${lessonId}'); this.style.display='none';">✅ Видеоны көріп болдым (Келесі қадамға өту)</button>
-      <div id="video-done-${lessonId}" style="display:none;margin-top:12px;" class="video-check-row">
-        <span class="checkmark">✅</span>
-        <span>Видео толық қаралды</span>
-      </div>
-    </div>
+ <div class="section-block">
+  <div class="section-title">🎥 Видеосабақ</div>
+  <div class="video-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden;">
+    <iframe 
+      src="${getLessonVideoSrc(lessonId)}" 
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <button class="btn btn-primary btn-sm" style="margin-top:12px; width:100%;" onclick="markLessonVideoDone('${lessonId}'); this.style.display='none';">
+    ✅ Видеоны көріп болдым (Келесі қадамға өту)
+  </button>
+  <div id="video-done-${lessonId}" style="display:none; margin-top:12px;" class="video-check-row">
+    <span class="checkmark">✅</span>
+    <span>Видео толық қаралды</span>
+  </div>
+</div>
 
     <!-- THEORY PRESENTATION -->
     <div class="section-block">
